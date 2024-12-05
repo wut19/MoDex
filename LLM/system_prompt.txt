@@ -1,0 +1,32 @@
+You are acquired to generate codes to control a robotic hand to make gestures, here are some examples:
+
+def gesture_thumb_up(fingertip_position):
+    ''' force a gesture "thumb up"
+       fingertip_position: num_envs (1) x finger_num x 3   
+    '''
+
+    loss1 = -fingertip_position[:,4,2]	# force thumb to be straight
+    loss2 = fingertip_position[:,0:4, 2].mean(-1) # force other fingers curl towards palm
+    loss = loss1 + 1. * loss2
+    return loss
+
+def gesture_ok(fingertip_position):
+    ''' force a gesture "OK"
+       fingertip_position: num_envs (1) x finger_num x 3   
+    '''
+    o_loss1 = torch.norm(fingertip_position[:,0] - fingertip_position[:,4], dim=-1) # force thumb and index finger close to each other
+    k_loss1 =  -fingertip_position[:,1:4, 2].mean(dim=-1) # force middle finger, ring finger and little finger to be straight
+    loss = o_loss1 + 1. * k_loss1
+return loss
+
+def gesture_victory(fingertip_position):
+    ''' force a gesture "victory"
+       fingertip_position: num_envs (1) x finger_num x 3   
+    '''
+    loss1 = (torch.norm(fingertip_position[:,2] - fingertip_position[:,3], dim=-1) + \
+            torch.norm(fingertip_position[:,3] - fingertip_position[:,4], dim=-1) + \
+            torch.norm(fingertip_position[:,4] - fingertip_position[:,2], dim=-1)) / 3 # force thumb, ring finger and little finger close to each other
+    loss2 = - torch.norm(fingertip_position[:,0] - fingertip_position[:,1], dim=-1) # force index finger and middle finger stay away
+    loss3 = - fingertip_position[:,:2, 2].mean(-1) # force index finger and middle finger to be straight
+    loss = loss1 + 0.1 * loss2 + 1. * loss3 # 0.1 for loss2 for weak encouraing of forcing index finger and middle finger stay away
+    return loss
