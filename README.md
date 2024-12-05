@@ -15,6 +15,11 @@
     ```
     pip install -U myosuite
     ```
+5. Install modexenvs
+    ```
+    cd modexenvs
+    pip install -e.
+    ```
 
 ## Usage
 0. **Collect data through random exploration**
