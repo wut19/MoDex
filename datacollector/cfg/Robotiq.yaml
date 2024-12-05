@@ -1,0 +1,22 @@
+task: Robotiq3Finger
+collector: IsaacHandDataCollector
+
+# data
+save_path: "../data/hand_data/"
+name: 'Robotiq_random_val'
+data_type: 'fingertip_pos' # 'fingtip_pos': [4,3], 'fingtip_pose': [4,7], ...
+num_data: 1000 # target data quantity to collect
+num_envs: 50
+
+# collector params
+interval: 1
+action_steps: 150
+
+# biological or mechanical phenomena
+ctrl_args:
+  ctrl_decay: 0.  # decay coefficient of control signal, imitating Muscle Fatigue or Sarcopenia, bewteen 0 and 1
+  broken_dim: -1  # set the dims to 0, imitation actuator broken, ofen use 2,3,4 dim
+
+# device
+device: "cuda:1"  # the device where we create envs and collect data
+

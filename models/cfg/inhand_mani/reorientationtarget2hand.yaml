@@ -1,0 +1,60 @@
+###### env args
+env_name: 'myoHandReorientTarget2Custom'
+obj_data_type: 'obj_pos_rot'
+#####################
+
+###### random seed
+seed: 1
+#####################
+
+###### training cfgs
+num_iters: 200
+rollout_min_len: 20
+num_trajectory_per_iter: 40
+num_rand_trajectory_per_iter: 8
+num_rand_rollouts: 100
+seq_len: 10
+#####################
+
+###### run cfgs
+exp_name: 'reorientation_hand'
+log_path: 'inhand_logs/'
+#####################
+
+###### dynamics model cfgs
+use_handmodel: True
+hand_model_path: 'logs/models/myohand_seq_forward_model_inhand_Aug_22_03:00:26_2024/ckpt-1.pt'
+freeze_handmodel: False
+sizes: {
+  'hand_state': 15,
+  'obj_state': 6,
+  'action': 39
+}
+hidden_sizes: {
+  'hand_model': [256,256,256,256],
+  'external_model': [512, 512], # tunable
+}
+#####################
+
+###### dynamics model train cfgs
+batch_size: 64
+num_workers: 4
+epochs: 30
+do_validation: True
+
+optimizer: 'Adam' # 'SGD' or 'Adam'
+lr: 1e-4  # tunable
+beta1: 0.9
+weight_decay: 0  # tunable
+#####################
+
+###### cem cfgs
+max_iters: 3
+sample_num: 1000
+num_elites: 20
+alpha: 0.2 
+horizon: 7
+#####################
+
+device: 'cuda:0'
+

@@ -1,0 +1,40 @@
+###### network cfgs
+pred_type: 'inverse_seq' # 'position' or 'pose'
+input_size: 30   # fingertip poses dim: 15x2 for position, 35x2 for pose
+output_size: 39 # action dim
+hidden_sizes: [256, 256, 256, 256]
+normalization: True
+#####################
+
+###### run cfgs
+exp_name: 'myohand_seq_inverse_model'
+log_path: 'logs/models'
+#####################
+
+###### train cfgs
+train_path: 'data/hand_data/MyoHand/myohand_sequence_train_large_Jul_29_14:57:42_2024'    # train dataset path
+val_path: 'data/hand_data/MyoHand/myohand_sequence_val_Jul_28_20:03:33_2024'        # validation dataset path
+batch_size: 64
+num_workers: 4
+epochs: 100
+save_interval: 5
+do_validation: True
+
+optimizer: 'Adam' # 'SGD' or 'Adam'
+lr: 1e-4
+beta1: 0.9
+
+scheduler: 'Adaptive' # 'Linear' or 'Adaptive'
+# Linear
+step_size: 10
+gamma: 0.8
+# Adaptive
+mode: 'min'
+factor: 0.8
+threshold: 1e-6
+patience: 3
+verbose:  True
+#####################
+
+device: 'cuda:0'
+

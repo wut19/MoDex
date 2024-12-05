@@ -1,0 +1,40 @@
+###### network cfgs
+pred_type: 'position' # 'position' or 'pose'
+input_size: 35  # action dim
+output_size: 15  # fingertip poses dim: 15 for position, 35 for pose
+hidden_sizes: [256, 256, 256, 256]
+normalization: False
+#####################
+
+###### run cfgs
+exp_name: 'shadowhand_seq_forward_model'
+log_path: 'logs/models'
+#####################
+
+###### train cfgs
+train_path: 'data/hand_data/ShadowHand/SeqShadowHand_random_train_Jul_31_14:53:51_2024'    # train dataset path
+val_path: 'data/hand_data/ShadowHand/SeqShadowHand_random_val_Jul_31_14:54:46_2024'        # validation dataset path
+batch_size: 64
+num_workers: 4
+epochs: 100
+save_interval: 5
+do_validation: True
+
+optimizer: 'Adam' # 'SGD' or 'Adam'
+lr: 1e-4
+beta1: 0.9
+
+scheduler: 'Adaptive' # 'Linear' or 'Adaptive'
+# Linear
+step_size: 10
+gamma: 0.8
+# Adaptive
+mode: 'min'
+factor: 0.8
+threshold: 1e-8
+patience: 3
+verbose:  True
+#####################
+
+device: 'cuda:0'
+

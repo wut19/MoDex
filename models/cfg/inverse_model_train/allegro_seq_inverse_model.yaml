@@ -1,0 +1,40 @@
+###### network cfgs
+pred_type: 'inverse_seq' # 'position' or 'pose'
+input_size: 24   # fingertip poses dim: 24 for position, 56 for pose
+output_size: 16 # action dim
+hidden_sizes: [256, 256, 256, 256]
+normalization: False
+#####################
+
+###### run cfgs
+exp_name: 'allegro_seq_inverse_model'
+log_path: 'logs/models'
+#####################
+
+###### train cfgs
+train_path: 'data/hand_data/AllegroHand/SeqAllegroHand_random_train_Jul_31_15:57:04_2024'    # train dataset path
+val_path: 'data/hand_data/AllegroHand/SeqAllegroHand_random_val_Jul_31_16:00:24_2024'        # validation dataset path
+batch_size: 64
+num_workers: 4
+epochs: 100
+save_interval: 5
+do_validation: True
+
+optimizer: 'Adam' # 'SGD' or 'Adam'
+lr: 1e-3
+beta1: 0.9
+
+scheduler: 'Adaptive' # 'Linear' or 'Adaptive'
+# Linear
+step_size: 10
+gamma: 0.8
+# Adaptive
+mode: 'min'
+factor: 0.8
+threshold: 1e-6
+patience: 3
+verbose:  True
+#####################
+
+device: 'cuda:0'
+

@@ -1,0 +1,40 @@
+###### network cfgs
+pred_type: 'position' # 'position' or 'pose'
+input_size: 16   # action dim
+output_size: 12  # fingertip poses dim: 12 for position, 28 for pose
+hidden_sizes: [128, 256, 256, 256]
+normalization: False
+#####################
+
+###### run cfgs
+exp_name: 'allegro_forward_model'
+log_path: 'logs/models'
+#####################
+
+###### train cfgs
+train_path: 'data/hand_data/AllegroHand/AllegroHand_random_train_Dec_04_19:59:14_2024'    # train dataset path
+val_path: 'data/hand_data/AllegroHand/AllegroHand_random_val_Dec_04_19:47:19_2024'        # validation dataset path
+batch_size: 64
+num_workers: 4
+epochs: 300
+save_interval: 15
+do_validation: True
+
+optimizer: 'Adam' # 'SGD' or 'Adam'
+lr: 1e-4
+beta1: 0.9
+
+scheduler: 'Adaptive' # 'Linear' or 'Adaptive'
+# Linear
+step_size: 10
+gamma: 0.8
+# Adaptive
+mode: 'min'
+factor: 0.8
+threshold: 1e-8
+patience: 3
+verbose:  True
+#####################
+
+device: 'cuda:0'
+

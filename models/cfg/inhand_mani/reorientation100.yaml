@@ -1,0 +1,53 @@
+###### env args
+env_name: 'myoHandReorient100Custom'
+obj_data_type: 'obj_pos_rot'
+#####################
+
+###### random seed
+seed: 0
+#####################
+
+###### training cfgs
+num_iters: 200
+rollout_min_len: 20
+num_trajectory_per_iter: 40
+num_rand_trajectory_per_iter: 8
+num_rand_rollouts: 100
+seq_len: 1
+#####################
+
+###### run cfgs
+exp_name: 'reorientation100_1step'
+log_path: 'inhand_logs/'
+#####################
+
+###### dynamics model cfgs
+use_handmodel: False
+freeze_handmodel: False
+input_size: 60  # action dim + hand state dim + object state im (39+15+6)
+output_size: 21  # states dim: 15 + 6
+hidden_sizes: [512, 512, 512]
+#####################
+
+###### dynamics model train cfgs
+batch_size: 64
+num_workers: 4
+epochs: 30
+do_validation: True
+
+optimizer: 'Adam' # 'SGD' or 'Adam'
+lr: 1e-4
+beta1: 0.9
+weight_decay: 1e-6
+#####################
+
+###### cem cfgs
+max_iters: 3
+sample_num: 1000
+num_elites: 20
+alpha: 0.2 
+horizon: 7
+#####################
+
+device: 'cuda:0'
+

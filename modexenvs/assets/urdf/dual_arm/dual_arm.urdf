@@ -1,0 +1,1812 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot name="dual_arm">
+  <joint name="UR5e_left_base_link_base_link_base_fixed_joint" type="fixed">
+    <origin xyz="0. 0. 0." rpy="0. 0. -3.1415925"/>
+    <parent link="UR5e_left_base_link"/>
+    <child link="UR5e_left_base"/>
+  </joint>
+  <joint name="UR5e_left_base_link_base_link_base_link_inertia" type="fixed">
+    <origin xyz="0. 0. 0." rpy="0. 0. -3.1415925"/>
+    <parent link="UR5e_left_base_link"/>
+    <child link="UR5e_left_base_link_inertia"/>
+  </joint>
+  <joint name="UR5e_left_base_link_inertia_shoulder_pan_joint" type="revolute">
+    <origin xyz="0. 0. 0.1625" rpy="0. -1.5707963 0. "/>
+    <parent link="UR5e_left_base_link_inertia"/>
+    <child link="UR5e_left_shoulder_link"/>
+    <axis xyz="1. 0. 0."/>
+    <limit lower="-6.2831853" upper="6.2831853" effort="9000." velocity="3.1415927"/>
+  </joint>
+  <joint name="UR5e_left_flange_flange_tool0" type="fixed">
+    <origin xyz="0. 0. 0." rpy="1.5707964 0. 1.5707964"/>
+    <parent link="UR5e_left_flange"/>
+    <child link="UR5e_left_tool0"/>
+  </joint>
+  <joint name="UR5e_left_forearm_link_wrist_1_joint" type="revolute">
+    <origin xyz="0.1333 0. 0.3922" rpy="0. 0. 0."/>
+    <parent link="UR5e_left_forearm_link"/>
+    <child link="UR5e_left_wrist_1_link"/>
+    <axis xyz="1. 0. 0."/>
+    <limit lower="-6.2831853" upper="6.2831853" effort="1680." velocity="3.1415927"/>
+  </joint>
+  <joint name="UR5e_left_root_joint" type="fixed">
+    <origin xyz="0.0056977 0.8 0. " rpy="0. 0. -0.0153835"/>
+    <parent link="World"/>
+    <child link="UR5e_left_base_link"/>
+  </joint>
+  <joint name="UR5e_left_shoulder_link_shoulder_lift_joint" type="revolute">
+    <origin xyz="0. 0. 0." rpy="0. 0. -1.5707964"/>
+    <parent link="UR5e_left_shoulder_link"/>
+    <child link="UR5e_left_upper_arm_link"/>
+    <axis xyz="1. 0. 0."/>
+    <limit lower="-6.2831853" upper="6.2831853" effort="9000." velocity="3.1415927"/>
+  </joint>
+  <joint name="UR5e_left_upper_arm_link_elbow_joint" type="revolute">
+    <origin xyz="0. 0. 0.425" rpy="0. 0. 0."/>
+    <parent link="UR5e_left_upper_arm_link"/>
+    <child link="UR5e_left_forearm_link"/>
+    <axis xyz="1. 0. 0."/>
+    <limit lower="-3.1415927" upper="3.1415927" effort="9000." velocity="3.1415927"/>
+  </joint>
+  <joint name="UR5e_left_wrist_1_link_wrist_2_joint" type="revolute">
+    <origin xyz="-0. -0.0997 0. " rpy="0. 0. -1.5707964"/>
+    <parent link="UR5e_left_wrist_1_link"/>
+    <child link="UR5e_left_wrist_2_link"/>
+    <axis xyz="1. 0. 0."/>
+    <limit lower="-6.2831853" upper="6.2831853" effort="1680." velocity="3.1415927"/>
+  </joint>
+  <joint name="UR5e_left_wrist_2_link_wrist_3_joint" type="revolute">
+    <origin xyz="-0. 0.0996 0. " rpy="-0.0000001 -0.0000001 1.5707964"/>
+    <parent link="UR5e_left_wrist_2_link"/>
+    <child link="UR5e_left_wrist_3_link"/>
+    <axis xyz="1. 0. 0."/>
+    <limit lower="-6.2831853" upper="6.2831853" effort="1680." velocity="3.1415927"/>
+  </joint>
+  <joint name="UR5e_left_wrist_3_link_wrist_3_flange" type="fixed">
+    <origin xyz="0. 0. 0." rpy="-1.5707964 0. 0. "/>
+    <parent link="UR5e_left_wrist_3_link"/>
+    <child link="UR5e_left_flange"/>
+  </joint>
+  <joint name="UR5e_right_base_link_base_link_base_fixed_joint" type="fixed">
+    <origin xyz="0. 0. 0." rpy="0. 0. -3.1415925"/>
+    <parent link="UR5e_right_base_link"/>
+    <child link="UR5e_right_base"/>
+  </joint>
+  <joint name="UR5e_right_base_link_base_link_base_link_inertia" type="fixed">
+    <origin xyz="0. 0. 0." rpy="0. 0. -3.1415925"/>
+    <parent link="UR5e_right_base_link"/>
+    <child link="UR5e_right_base_link_inertia"/>
+  </joint>
+  <joint name="UR5e_right_base_link_inertia_shoulder_pan_joint" type="revolute">
+    <origin xyz="0. 0. 0.1625" rpy="0. -1.5707963 0. "/>
+    <parent link="UR5e_right_base_link_inertia"/>
+    <child link="UR5e_right_shoulder_link"/>
+    <axis xyz="1. 0. 0."/>
+    <limit lower="-6.2831853" upper="6.2831853" effort="9000." velocity="3.1415927"/>
+  </joint>
+  <joint name="UR5e_right_flange_flange_tool0" type="fixed">
+    <origin xyz="0. 0. 0." rpy="1.5707964 0. 1.5707964"/>
+    <parent link="UR5e_right_flange"/>
+    <child link="UR5e_right_tool0"/>
+  </joint>
+  <joint name="UR5e_right_forearm_link_wrist_1_joint" type="revolute">
+    <origin xyz="0.1333 0. 0.3922" rpy="0. 0. 0."/>
+    <parent link="UR5e_right_forearm_link"/>
+    <child link="UR5e_right_wrist_1_link"/>
+    <axis xyz="1. 0. 0."/>
+    <limit lower="-6.2831853" upper="6.2831853" effort="1680." velocity="3.1415927"/>
+  </joint>
+  <joint name="UR5e_right_root_joint" type="fixed">
+    <origin xyz="0. -0.8 0. " rpy="0. 0. 0."/>
+    <parent link="World"/>
+    <child link="UR5e_right_base_link"/>
+  </joint>
+  <joint name="UR5e_right_shoulder_link_shoulder_lift_joint" type="revolute">
+    <origin xyz="0. 0. 0." rpy="0. 0. -1.5707964"/>
+    <parent link="UR5e_right_shoulder_link"/>
+    <child link="UR5e_right_upper_arm_link"/>
+    <axis xyz="1. 0. 0."/>
+    <limit lower="-6.2831853" upper="6.2831853" effort="9000." velocity="3.1415927"/>
+  </joint>
+  <joint name="UR5e_right_upper_arm_link_elbow_joint" type="revolute">
+    <origin xyz="0. 0. 0.425" rpy="0. 0. 0."/>
+    <parent link="UR5e_right_upper_arm_link"/>
+    <child link="UR5e_right_forearm_link"/>
+    <axis xyz="1. 0. 0."/>
+    <limit lower="-3.1415927" upper="3.1415927" effort="9000." velocity="3.1415927"/>
+  </joint>
+  <joint name="UR5e_right_wrist_1_link_wrist_2_joint" type="revolute">
+    <origin xyz="-0. -0.0997 0. " rpy="0. 0. -1.5707964"/>
+    <parent link="UR5e_right_wrist_1_link"/>
+    <child link="UR5e_right_wrist_2_link"/>
+    <axis xyz="1. 0. 0."/>
+    <limit lower="-6.2831853" upper="6.2831853" effort="1680." velocity="3.1415927"/>
+  </joint>
+  <joint name="UR5e_right_wrist_2_link_wrist_3_joint" type="revolute">
+    <origin xyz="-0. 0.0996 0. " rpy="-0.0000001 -0.0000001 1.5707964"/>
+    <parent link="UR5e_right_wrist_2_link"/>
+    <child link="UR5e_right_wrist_3_link"/>
+    <axis xyz="1. 0. 0."/>
+    <limit lower="-6.2831853" upper="6.2831853" effort="1680." velocity="3.1415927"/>
+  </joint>
+  <joint name="UR5e_right_wrist_3_link_wrist_3_flange" type="fixed">
+    <origin xyz="0. 0. 0." rpy="-1.5707964 0. 0. "/>
+    <parent link="UR5e_right_wrist_3_link"/>
+    <child link="UR5e_right_flange"/>
+  </joint>
+  <joint name="lh_FFJ1" type="revolute">
+    <origin xyz="0. 0. 0.025" rpy="0. 0. 0."/>
+    <parent link="lh_ffmiddle"/>
+    <child link="lh_ffdistal"/>
+    <axis xyz="1. 0. 0."/>
+    <limit lower="0." upper="1.5707999" effort="100" velocity="1.0"/>
+  </joint>
+  <joint name="lh_FFJ2" type="revolute">
+    <origin xyz="-0. 0. 0.045" rpy="0. 0. 0."/>
+    <parent link="lh_ffproximal"/>
+    <child link="lh_ffmiddle"/>
+    <axis xyz="1. 0. 0."/>
+    <limit lower="0." upper="1.5707999" effort="100" velocity="1.0"/>
+  </joint>
+  <joint name="lh_FFJ3" type="revolute">
+    <origin xyz="0. 0. 0." rpy="0. 0. -1.5707964"/>
+    <parent link="lh_ffknuckle"/>
+    <child link="lh_ffproximal"/>
+    <axis xyz="1. 0. 0."/>
+    <limit lower="-0.261799" upper="1.5707999" effort="100" velocity="1.0"/>
+  </joint>
+  <joint name="lh_FFJ4" type="revolute">
+    <origin xyz="-0.033 0. 0.095" rpy="0. 0. 1.5707964"/>
+    <parent link="lh_palm"/>
+    <child link="lh_ffknuckle"/>
+    <axis xyz="1. 0. 0."/>
+    <limit lower="-0.349066" upper="0.349066" effort="100" velocity="1.0"/>
+  </joint>
+  <joint name="lh_LFJ1" type="revolute">
+    <origin xyz="0. 0. 0.025" rpy="0. 0. 0."/>
+    <parent link="lh_lfmiddle"/>
+    <child link="lh_lfdistal"/>
+    <axis xyz="1. 0. 0."/>
+    <limit lower="0." upper="1.5707999" effort="100" velocity="1.0"/>
+  </joint>
+  <joint name="lh_LFJ2" type="revolute">
+    <origin xyz="0. 0. 0.045" rpy="0. 0. 0."/>
+    <parent link="lh_lfproximal"/>
+    <child link="lh_lfmiddle"/>
+    <axis xyz="1. 0. 0."/>
+    <limit lower="0." upper="1.5707999" effort="100" velocity="1.0"/>
+  </joint>
+  <joint name="lh_LFJ3" type="revolute">
+    <origin xyz="0. 0. 0." rpy="0. 0. 1.5707964"/>
+    <parent link="lh_lfknuckle"/>
+    <child link="lh_lfproximal"/>
+    <axis xyz="1. 0. 0."/>
+    <limit lower="-0.261799" upper="1.5707999" effort="100" velocity="1.0"/>
+  </joint>
+  <joint name="lh_LFJ4" type="revolute">
+    <origin xyz="-0.053892 0. 0.0377356" rpy="0.9599314 0. -1.5707964"/>
+    <parent link="lh_lfmetacarpal"/>
+    <child link="lh_lfknuckle"/>
+    <axis xyz="1. 0. 0."/>
+    <limit lower="-0.349066" upper="0.349066" effort="100" velocity="1.0"/>
+  </joint>
+  <joint name="lh_LFJ5" type="revolute">
+    <origin xyz="0.033 -0. 0.02071" rpy="0. 0.9599314 0. "/>
+    <parent link="lh_palm"/>
+    <child link="lh_lfmetacarpal"/>
+    <axis xyz="1. 0. 0."/>
+    <limit lower="0." upper="0.785398" effort="100" velocity="1.0"/>
+  </joint>
+  <joint name="lh_MFJ1" type="revolute">
+    <origin xyz="0. 0. 0.025" rpy="0. 0. 0."/>
+    <parent link="lh_mfmiddle"/>
+    <child link="lh_mfdistal"/>
+    <axis xyz="1. 0. 0."/>
+    <limit lower="0." upper="1.5707999" effort="100" velocity="1.0"/>
+  </joint>
+  <joint name="lh_MFJ2" type="revolute">
+    <origin xyz="-0. 0. 0.045" rpy="0. 0. 0."/>
+    <parent link="lh_mfproximal"/>
+    <child link="lh_mfmiddle"/>
+    <axis xyz="1. 0. 0."/>
+    <limit lower="0." upper="1.5707999" effort="100" velocity="1.0"/>
+  </joint>
+  <joint name="lh_MFJ3" type="revolute">
+    <origin xyz="0. 0. 0." rpy="0. 0. -1.5707964"/>
+    <parent link="lh_mfknuckle"/>
+    <child link="lh_mfproximal"/>
+    <axis xyz="1. 0. 0."/>
+    <limit lower="-0.261799" upper="1.5707999" effort="100" velocity="1.0"/>
+  </joint>
+  <joint name="lh_MFJ4" type="revolute">
+    <origin xyz="-0.011 0. 0.099" rpy="0. 0. 1.5707964"/>
+    <parent link="lh_palm"/>
+    <child link="lh_mfknuckle"/>
+    <axis xyz="1. 0. 0."/>
+    <limit lower="-0.349066" upper="0.349066" effort="100" velocity="1.0"/>
+  </joint>
+  <joint name="lh_RFJ1" type="revolute">
+    <origin xyz="0. 0. 0.025" rpy="0. 0. 0."/>
+    <parent link="lh_rfmiddle"/>
+    <child link="lh_rfdistal"/>
+    <axis xyz="1. 0. 0."/>
+    <limit lower="0." upper="1.5707999" effort="100" velocity="1.0"/>
+  </joint>
+  <joint name="lh_RFJ2" type="revolute">
+    <origin xyz="0. 0. 0.045" rpy="0. 0. 0."/>
+    <parent link="lh_rfproximal"/>
+    <child link="lh_rfmiddle"/>
+    <axis xyz="1. 0. 0."/>
+    <limit lower="0." upper="1.5707999" effort="100" velocity="1.0"/>
+  </joint>
+  <joint name="lh_RFJ3" type="revolute">
+    <origin xyz="0. 0. 0." rpy="0. 0. 1.5707964"/>
+    <parent link="lh_rfknuckle"/>
+    <child link="lh_rfproximal"/>
+    <axis xyz="1. 0. 0."/>
+    <limit lower="-0.261799" upper="1.5707999" effort="100" velocity="1.0"/>
+  </joint>
+  <joint name="lh_RFJ4" type="revolute">
+    <origin xyz="0.011 0. 0.095" rpy="0. 0. -1.5707964"/>
+    <parent link="lh_palm"/>
+    <child link="lh_rfknuckle"/>
+    <axis xyz="1. 0. 0."/>
+    <limit lower="-0.349066" upper="0.349066" effort="100" velocity="1.0"/>
+  </joint>
+  <joint name="lh_THJ1" type="revolute">
+    <origin xyz="0. -0. 0.032" rpy="0.0000002 0.0000001 0. "/>
+    <parent link="lh_thmiddle"/>
+    <child link="lh_thdistal"/>
+    <axis xyz="1. 0. 0."/>
+    <limit lower="-0.261799" upper="1.5707999" effort="100" velocity="1.0"/>
+  </joint>
+  <joint name="lh_THJ2" type="revolute">
+    <origin xyz="0. 0. 0." rpy="-0.0000002 -0. 1.5707964"/>
+    <parent link="lh_thhub"/>
+    <child link="lh_thmiddle"/>
+    <axis xyz="1. 0. 0."/>
+    <limit lower="-0.698132" upper="0.698132" effort="100" velocity="1.0"/>
+  </joint>
+  <joint name="lh_THJ3" type="revolute">
+    <origin xyz="-0. 0. 0.038" rpy="0. 0. 0."/>
+    <parent link="lh_thproximal"/>
+    <child link="lh_thhub"/>
+    <axis xyz="1. 0. 0."/>
+    <limit lower="-0.20944" upper="0.20944" effort="100" velocity="1.0"/>
+  </joint>
+  <joint name="lh_THJ4" type="revolute">
+    <origin xyz="0. 0. 0." rpy="0.6646679 -1.5707961 2.4769247"/>
+    <parent link="lh_thbase"/>
+    <child link="lh_thproximal"/>
+    <axis xyz="1. 0. 0."/>
+    <limit lower="0." upper="1.2217299" effort="100" velocity="1.0"/>
+  </joint>
+  <joint name="lh_THJ5" type="revolute">
+    <origin xyz="-0.034 -0.00858 0.029 " rpy="0. -0.7853992 3.1415927"/>
+    <parent link="lh_palm"/>
+    <child link="lh_thbase"/>
+    <axis xyz="1. 0. 0."/>
+    <limit lower="-1.0471999" upper="1.0471999" effort="100" velocity="1.0"/>
+  </joint>
+  <joint name="lh_WRJ1" type="revolute">
+    <origin xyz="0. 0. 0.034" rpy="0. 0. 0."/>
+    <parent link="lh_wrist"/>
+    <child link="lh_palm"/>
+    <axis xyz="1. 0. 0."/>
+    <limit lower="-0.698132" upper="0.488692" effort="100" velocity="1.0"/>
+  </joint>
+  <joint name="lh_wrist_FixedJoint" type="fixed">
+    <origin xyz="-0.0039488 0.001802 0.011509 " rpy="0.000001 0. 1.5629113"/>
+    <parent link="UR5e_left_tool0"/>
+    <child link="lh_wrist"/>
+  </joint>
+  <joint name="rh_FFJ1" type="revolute">
+    <origin xyz="0. 0. 0.025" rpy="0. 0. 0."/>
+    <parent link="rh_ffmiddle"/>
+    <child link="rh_ffdistal"/>
+    <axis xyz="1. 0. 0."/>
+    <limit lower="0." upper="1.5707999" effort="100" velocity="1.0"/>
+  </joint>
+  <joint name="rh_FFJ2" type="revolute">
+    <origin xyz="-0. 0. 0.045" rpy="0. 0. 0."/>
+    <parent link="rh_ffproximal"/>
+    <child link="rh_ffmiddle"/>
+    <axis xyz="1. 0. 0."/>
+    <limit lower="0." upper="1.5707999" effort="100" velocity="1.0"/>
+  </joint>
+  <joint name="rh_FFJ3" type="revolute">
+    <origin xyz="0. 0. 0." rpy="0. 0. 1.5707964"/>
+    <parent link="rh_ffknuckle"/>
+    <child link="rh_ffproximal"/>
+    <axis xyz="1. 0. 0."/>
+    <limit lower="-0.261799" upper="1.5707999" effort="100" velocity="1.0"/>
+  </joint>
+  <joint name="rh_FFJ4" type="revolute">
+    <origin xyz="0.033 0. 0.095" rpy="0. 0. -1.5707964"/>
+    <parent link="rh_palm"/>
+    <child link="rh_ffknuckle"/>
+    <axis xyz="1. 0. 0."/>
+    <limit lower="-0.349066" upper="0.349066" effort="100" velocity="1.0"/>
+  </joint>
+  <joint name="rh_LFJ1" type="revolute">
+    <origin xyz="0. 0. 0.025" rpy="0. 0. 0."/>
+    <parent link="rh_lfmiddle"/>
+    <child link="rh_lfdistal"/>
+    <axis xyz="1. 0. 0."/>
+    <limit lower="0." upper="1.5707999" effort="100" velocity="1.0"/>
+  </joint>
+  <joint name="rh_LFJ2" type="revolute">
+    <origin xyz="-0. 0. 0.045" rpy="0. 0. 0."/>
+    <parent link="rh_lfproximal"/>
+    <child link="rh_lfmiddle"/>
+    <axis xyz="1. 0. 0."/>
+    <limit lower="0." upper="1.5707999" effort="100" velocity="1.0"/>
+  </joint>
+  <joint name="rh_LFJ3" type="revolute">
+    <origin xyz="0. 0. 0." rpy="0. 0. -1.5707964"/>
+    <parent link="rh_lfknuckle"/>
+    <child link="rh_lfproximal"/>
+    <axis xyz="1. 0. 0."/>
+    <limit lower="-0.261799" upper="1.5707999" effort="100" velocity="1.0"/>
+  </joint>
+  <joint name="rh_LFJ4" type="revolute">
+    <origin xyz="0.053892 0. 0.0377356" rpy="0.9599314 0. 1.5707964"/>
+    <parent link="rh_lfmetacarpal"/>
+    <child link="rh_lfknuckle"/>
+    <axis xyz="1. 0. 0."/>
+    <limit lower="-0.349066" upper="0.349066" effort="100" velocity="1.0"/>
+  </joint>
+  <joint name="rh_LFJ5" type="revolute">
+    <origin xyz="-0.033 -0. 0.02071" rpy="0. -0.9599314 0. "/>
+    <parent link="rh_palm"/>
+    <child link="rh_lfmetacarpal"/>
+    <axis xyz="1. 0. 0."/>
+    <limit lower="0." upper="0.785398" effort="100" velocity="1.0"/>
+  </joint>
+  <joint name="rh_MFJ1" type="revolute">
+    <origin xyz="0. 0. 0.025" rpy="0. 0. 0."/>
+    <parent link="rh_mfmiddle"/>
+    <child link="rh_mfdistal"/>
+    <axis xyz="1. 0. 0."/>
+    <limit lower="0." upper="1.5707999" effort="100" velocity="1.0"/>
+  </joint>
+  <joint name="rh_MFJ2" type="revolute">
+    <origin xyz="0. 0. 0.045" rpy="0. 0. 0."/>
+    <parent link="rh_mfproximal"/>
+    <child link="rh_mfmiddle"/>
+    <axis xyz="1. 0. 0."/>
+    <limit lower="0." upper="1.5707999" effort="100" velocity="1.0"/>
+  </joint>
+  <joint name="rh_MFJ3" type="revolute">
+    <origin xyz="0. 0. 0." rpy="0. 0. 1.5707964"/>
+    <parent link="rh_mfknuckle"/>
+    <child link="rh_mfproximal"/>
+    <axis xyz="1. 0. 0."/>
+    <limit lower="-0.261799" upper="1.5707999" effort="100" velocity="1.0"/>
+  </joint>
+  <joint name="rh_MFJ4" type="revolute">
+    <origin xyz="0.011 0. 0.099" rpy="0. 0. -1.5707964"/>
+    <parent link="rh_palm"/>
+    <child link="rh_mfknuckle"/>
+    <axis xyz="1. 0. 0."/>
+    <limit lower="-0.349066" upper="0.349066" effort="100" velocity="1.0"/>
+  </joint>
+  <joint name="rh_RFJ1" type="revolute">
+    <origin xyz="0. 0. 0.025" rpy="0. 0. 0."/>
+    <parent link="rh_rfmiddle"/>
+    <child link="rh_rfdistal"/>
+    <axis xyz="1. 0. 0."/>
+    <limit lower="0." upper="1.5707999" effort="100" velocity="1.0"/>
+  </joint>
+  <joint name="rh_RFJ2" type="revolute">
+    <origin xyz="-0. 0. 0.045" rpy="0. 0. 0."/>
+    <parent link="rh_rfproximal"/>
+    <child link="rh_rfmiddle"/>
+    <axis xyz="1. 0. 0."/>
+    <limit lower="0." upper="1.5707999" effort="100" velocity="1.0"/>
+  </joint>
+  <joint name="rh_RFJ3" type="revolute">
+    <origin xyz="0. 0. 0." rpy="0. 0. -1.5707964"/>
+    <parent link="rh_rfknuckle"/>
+    <child link="rh_rfproximal"/>
+    <axis xyz="1. 0. 0."/>
+    <limit lower="-0.261799" upper="1.5707999" effort="100" velocity="1.0"/>
+  </joint>
+  <joint name="rh_RFJ4" type="revolute">
+    <origin xyz="-0.011 0. 0.095" rpy="0. 0. 1.5707964"/>
+    <parent link="rh_palm"/>
+    <child link="rh_rfknuckle"/>
+    <axis xyz="1. 0. 0."/>
+    <limit lower="-0.349066" upper="0.349066" effort="100" velocity="1.0"/>
+  </joint>
+  <joint name="rh_THJ1" type="revolute">
+    <origin xyz="-0. -0. 0.032" rpy="0.0000002 0. 0. "/>
+    <parent link="rh_thmiddle"/>
+    <child link="rh_thdistal"/>
+    <axis xyz="1. 0. 0."/>
+    <limit lower="-0.261799" upper="1.5707999" effort="100" velocity="1.0"/>
+  </joint>
+  <joint name="rh_THJ2" type="revolute">
+    <origin xyz="0. 0. 0." rpy="-0.0000001 -0. -1.5707964"/>
+    <parent link="rh_thhub"/>
+    <child link="rh_thmiddle"/>
+    <axis xyz="1. 0. 0."/>
+    <limit lower="-0.698132" upper="0.698132" effort="100" velocity="1.0"/>
+  </joint>
+  <joint name="rh_THJ3" type="revolute">
+    <origin xyz="0. 0. 0.038" rpy="0. 0. 0."/>
+    <parent link="rh_thproximal"/>
+    <child link="rh_thhub"/>
+    <axis xyz="1. 0. 0."/>
+    <limit lower="-0.20944" upper="0.20944" effort="100" velocity="1.0"/>
+  </joint>
+  <joint name="rh_THJ4" type="revolute">
+    <origin xyz="0. 0. 0." rpy="3.1415927 -1.5707961 3.1415927"/>
+    <parent link="rh_thbase"/>
+    <child link="rh_thproximal"/>
+    <axis xyz="1. 0. 0."/>
+    <limit lower="0." upper="1.2217299" effort="100" velocity="1.0"/>
+  </joint>
+  <joint name="rh_THJ5" type="revolute">
+    <origin xyz="0.034 -0.00858 0.029 " rpy="-3.1415925 0.7853993 -3.1415927"/>
+    <parent link="rh_palm"/>
+    <child link="rh_thbase"/>
+    <axis xyz="1. 0. 0."/>
+    <limit lower="-1.0471999" upper="1.0471999" effort="100" velocity="1.0"/>
+  </joint>
+  <joint name="rh_WRJ1" type="revolute">
+    <origin xyz="0. 0. 0.034" rpy="0. 0. 0."/>
+    <parent link="rh_wrist"/>
+    <child link="rh_palm"/>
+    <axis xyz="1. 0. 0."/>
+    <limit lower="-0.698132" upper="0.488692" effort="100" velocity="1.0"/>
+  </joint>
+  <joint name="rh_wrist_FixedJoint" type="fixed">
+    <origin xyz="0.0021303 0.0073815 0.0197614" rpy="0.000001 0. 1.5629113"/>
+    <parent link="UR5e_right_tool0"/>
+    <child link="rh_wrist"/>
+  </joint>
+  <link name="UR5e_left_base">
+    <inertial>
+      <origin xyz="0. 0. 0." rpy="0. 0. 0."/>
+      <mass value="0.0001"/>
+      <inertia ixx="0." ixy="0." ixz="0." iyy="0." iyz="0." izz="0."/>
+    </inertial>
+  </link>
+  <link name="UR5e_left_base_link">
+    <inertial>
+      <origin xyz="0. 0. 0." rpy="0. 0. 0."/>
+      <mass value="0.0001"/>
+      <inertia ixx="0." ixy="0." ixz="0." iyy="0." iyz="0." izz="0."/>
+    </inertial>
+  </link>
+  <link name="UR5e_left_base_link_inertia">
+    <inertial>
+      <origin xyz="0. 0. 0." rpy="0. 0. 0."/>
+      <mass value="4."/>
+      <inertia ixx="0." ixy="0." ixz="0." iyy="0." iyz="0." izz="0."/>
+    </inertial>
+    <visual>
+      <origin xyz="0. 0. 0." rpy="0. 0. -3.1415925"/>
+      <geometry>
+        <mesh filename="meshes/UR5e_left_base_link_inertia_visuals.obj" scale="1. 1. 1."/>
+      </geometry>
+    </visual>
+    <visual>
+      <origin xyz="0. 0. 0." rpy="0. 0. -3.1415925"/>
+      <geometry>
+        <mesh filename="meshes/UR5e_left_base_link_inertia_collisions.obj" scale="1. 1. 1."/>
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0. 0. 0." rpy="0. 0. -3.1415925"/>
+      <geometry>
+        <mesh filename="meshes/UR5e_left_base_link_inertia_collisions.obj" scale="1. 1. 1."/>
+      </geometry>
+    </collision>
+  </link>
+  <link name="UR5e_left_flange">
+    <inertial>
+      <origin xyz="0. 0. 0." rpy="0. 0. 0."/>
+      <mass value="0.0001"/>
+      <inertia ixx="0." ixy="0." ixz="0." iyy="0." iyz="0." izz="0."/>
+    </inertial>
+  </link>
+  <link name="UR5e_left_forearm_link">
+    <inertial>
+      <origin xyz="0. 0. 0." rpy="0. 0. 0."/>
+      <mass value="2.2750001"/>
+      <inertia ixx="0." ixy="0." ixz="0." iyy="0." iyz="0." izz="0."/>
+    </inertial>
+    <visual>
+      <origin xyz="0.007 0. 0. " rpy="0. -0. -1.5707964"/>
+      <geometry>
+        <mesh filename="meshes/UR5e_left_forearm_link_visuals.obj" scale="1. 1. 1."/>
+      </geometry>
+    </visual>
+    <visual>
+      <origin xyz="0.007 0. 0. " rpy="0. -0. -1.5707964"/>
+      <geometry>
+        <mesh filename="meshes/UR5e_left_forearm_link_collisions.obj" scale="1. 1. 1."/>
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0.007 0. 0. " rpy="0. -0. -1.5707964"/>
+      <geometry>
+        <mesh filename="meshes/UR5e_left_forearm_link_collisions.obj" scale="1. 1. 1."/>
+      </geometry>
+    </collision>
+  </link>
+  <link name="UR5e_left_shoulder_link">
+    <inertial>
+      <origin xyz="0. 0. 0." rpy="0. 0. 0."/>
+      <mass value="3.7"/>
+      <inertia ixx="0." ixy="0." ixz="0." iyy="0." iyz="0." izz="0."/>
+    </inertial>
+    <visual>
+      <origin xyz="0. 0. 0." rpy="-3.1415927 -1.5707963 0. "/>
+      <geometry>
+        <mesh filename="meshes/UR5e_left_shoulder_link_visuals.obj" scale="1. 1. 1."/>
+      </geometry>
+    </visual>
+    <visual>
+      <origin xyz="0. 0. 0." rpy="-3.1415927 -1.5707963 0. "/>
+      <geometry>
+        <mesh filename="meshes/UR5e_left_shoulder_link_collisions.obj" scale="1. 1. 1."/>
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0. 0. 0." rpy="-3.1415927 -1.5707963 0. "/>
+      <geometry>
+        <mesh filename="meshes/UR5e_left_shoulder_link_collisions.obj" scale="1. 1. 1."/>
+      </geometry>
+    </collision>
+  </link>
+  <link name="UR5e_left_tool0">
+    <inertial>
+      <origin xyz="0. 0. 0." rpy="0. 0. 0."/>
+      <mass value="0.0001"/>
+      <inertia ixx="0." ixy="0." ixz="0." iyy="0." iyz="0." izz="0."/>
+    </inertial>
+  </link>
+  <link name="UR5e_left_upper_arm_link">
+    <inertial>
+      <origin xyz="0. 0. 0." rpy="0. 0. 0."/>
+      <mass value="8.3929996"/>
+      <inertia ixx="0." ixy="0." ixz="0." iyy="0." iyz="0." izz="0."/>
+    </inertial>
+    <visual>
+      <origin xyz="0.138 0. 0. " rpy="0. -0. -1.5707964"/>
+      <geometry>
+        <mesh filename="meshes/UR5e_left_upper_arm_link_visuals.obj" scale="1. 1. 1."/>
+      </geometry>
+    </visual>
+    <visual>
+      <origin xyz="0.138 0. 0. " rpy="0. -0. -1.5707964"/>
+      <geometry>
+        <mesh filename="meshes/UR5e_left_upper_arm_link_collisions.obj" scale="1. 1. 1."/>
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0.138 0. 0. " rpy="0. -0. -1.5707964"/>
+      <geometry>
+        <mesh filename="meshes/UR5e_left_upper_arm_link_collisions.obj" scale="1. 1. 1."/>
+      </geometry>
+    </collision>
+  </link>
+  <link name="UR5e_left_wrist_1_link">
+    <inertial>
+      <origin xyz="0. 0. 0." rpy="0. 0. 0."/>
+      <mass value="1.219"/>
+      <inertia ixx="0." ixy="0." ixz="0." iyy="0." iyz="0." izz="0."/>
+    </inertial>
+    <visual>
+      <origin xyz="-0.127 0. 0. " rpy="1.5707964 1.5707964 0. "/>
+      <geometry>
+        <mesh filename="meshes/UR5e_left_wrist_1_link_visuals.obj" scale="1. 1. 1."/>
+      </geometry>
+    </visual>
+    <visual>
+      <origin xyz="-0.127 0. 0. " rpy="1.5707964 1.5707964 0. "/>
+      <geometry>
+        <mesh filename="meshes/UR5e_left_wrist_1_link_collisions.obj" scale="1. 1. 1."/>
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="-0.127 0. 0. " rpy="1.5707964 1.5707964 0. "/>
+      <geometry>
+        <mesh filename="meshes/UR5e_left_wrist_1_link_collisions.obj" scale="1. 1. 1."/>
+      </geometry>
+    </collision>
+  </link>
+  <link name="UR5e_left_wrist_2_link">
+    <inertial>
+      <origin xyz="0. 0. 0." rpy="0. 0. 0."/>
+      <mass value="1.219"/>
+      <inertia ixx="0." ixy="0." ixz="0." iyy="0." iyz="0." izz="0."/>
+    </inertial>
+    <visual>
+      <origin xyz="-0.0997 0. 0. " rpy="0. 1.5707963 0. "/>
+      <geometry>
+        <mesh filename="meshes/UR5e_left_wrist_2_link_visuals.obj" scale="1. 1. 1."/>
+      </geometry>
+    </visual>
+    <visual>
+      <origin xyz="-0.0997 0. 0. " rpy="0. 1.5707963 0. "/>
+      <geometry>
+        <mesh filename="meshes/UR5e_left_wrist_2_link_collisions.obj" scale="1. 1. 1."/>
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="-0.0997 0. 0. " rpy="0. 1.5707963 0. "/>
+      <geometry>
+        <mesh filename="meshes/UR5e_left_wrist_2_link_collisions.obj" scale="1. 1. 1."/>
+      </geometry>
+    </collision>
+  </link>
+  <link name="UR5e_left_wrist_3_link">
+    <inertial>
+      <origin xyz="0. 0. 0." rpy="0. 0. 0."/>
+      <mass value="0.1879"/>
+      <inertia ixx="0." ixy="0." ixz="0." iyy="0." iyz="0." izz="0."/>
+    </inertial>
+    <visual>
+      <origin xyz="-0.0989 0. 0. " rpy="1.5707964 1.5707964 0. "/>
+      <geometry>
+        <mesh filename="meshes/UR5e_left_wrist_3_link_visuals.obj" scale="1. 1. 1."/>
+      </geometry>
+    </visual>
+    <visual>
+      <origin xyz="-0.0989 0. 0. " rpy="1.5707964 1.5707964 0. "/>
+      <geometry>
+        <mesh filename="meshes/UR5e_left_wrist_3_link_collisions.obj" scale="1. 1. 1."/>
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="-0.0989 0. 0. " rpy="1.5707964 1.5707964 0. "/>
+      <geometry>
+        <mesh filename="meshes/UR5e_left_wrist_3_link_collisions.obj" scale="1. 1. 1."/>
+      </geometry>
+    </collision>
+  </link>
+  <link name="UR5e_right_base">
+    <inertial>
+      <origin xyz="0. 0. 0." rpy="0. 0. 0."/>
+      <mass value="0.0001"/>
+      <inertia ixx="0." ixy="0." ixz="0." iyy="0." iyz="0." izz="0."/>
+    </inertial>
+  </link>
+  <link name="UR5e_right_base_link">
+    <inertial>
+      <origin xyz="0. 0. 0." rpy="0. 0. 0."/>
+      <mass value="0.0001"/>
+      <inertia ixx="0." ixy="0." ixz="0." iyy="0." iyz="0." izz="0."/>
+    </inertial>
+  </link>
+  <link name="UR5e_right_base_link_inertia">
+    <inertial>
+      <origin xyz="0. 0. 0." rpy="0. 0. 0."/>
+      <mass value="4."/>
+      <inertia ixx="0." ixy="0." ixz="0." iyy="0." iyz="0." izz="0."/>
+    </inertial>
+    <visual>
+      <origin xyz="0. 0. 0." rpy="0. 0. -3.1415925"/>
+      <geometry>
+        <mesh filename="meshes/UR5e_right_base_link_inertia_visuals.obj" scale="1. 1. 1."/>
+      </geometry>
+    </visual>
+    <visual>
+      <origin xyz="0. 0. 0." rpy="0. 0. -3.1415925"/>
+      <geometry>
+        <mesh filename="meshes/UR5e_right_base_link_inertia_collisions.obj" scale="1. 1. 1."/>
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0. 0. 0." rpy="0. 0. -3.1415925"/>
+      <geometry>
+        <mesh filename="meshes/UR5e_right_base_link_inertia_collisions.obj" scale="1. 1. 1."/>
+      </geometry>
+    </collision>
+  </link>
+  <link name="UR5e_right_flange">
+    <inertial>
+      <origin xyz="0. 0. 0." rpy="0. 0. 0."/>
+      <mass value="0.0001"/>
+      <inertia ixx="0." ixy="0." ixz="0." iyy="0." iyz="0." izz="0."/>
+    </inertial>
+  </link>
+  <link name="UR5e_right_forearm_link">
+    <inertial>
+      <origin xyz="0. 0. 0." rpy="0. 0. 0."/>
+      <mass value="2.2750001"/>
+      <inertia ixx="0." ixy="0." ixz="0." iyy="0." iyz="0." izz="0."/>
+    </inertial>
+    <visual>
+      <origin xyz="0.007 0. 0. " rpy="0. -0. -1.5707964"/>
+      <geometry>
+        <mesh filename="meshes/UR5e_right_forearm_link_visuals.obj" scale="1. 1. 1."/>
+      </geometry>
+    </visual>
+    <visual>
+      <origin xyz="0.007 0. 0. " rpy="0. -0. -1.5707964"/>
+      <geometry>
+        <mesh filename="meshes/UR5e_right_forearm_link_collisions.obj" scale="1. 1. 1."/>
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0.007 0. 0. " rpy="0. -0. -1.5707964"/>
+      <geometry>
+        <mesh filename="meshes/UR5e_right_forearm_link_collisions.obj" scale="1. 1. 1."/>
+      </geometry>
+    </collision>
+  </link>
+  <link name="UR5e_right_shoulder_link">
+    <inertial>
+      <origin xyz="0. 0. 0." rpy="0. 0. 0."/>
+      <mass value="3.7"/>
+      <inertia ixx="0." ixy="0." ixz="0." iyy="0." iyz="0." izz="0."/>
+    </inertial>
+    <visual>
+      <origin xyz="0. 0. 0." rpy="3.1415927 -1.5707963 0. "/>
+      <geometry>
+        <mesh filename="meshes/UR5e_right_shoulder_link_visuals.obj" scale="1. 1. 1."/>
+      </geometry>
+    </visual>
+    <visual>
+      <origin xyz="0. 0. 0." rpy="3.1415927 -1.5707963 0. "/>
+      <geometry>
+        <mesh filename="meshes/UR5e_right_shoulder_link_collisions.obj" scale="1. 1. 1."/>
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0. 0. 0." rpy="3.1415927 -1.5707963 0. "/>
+      <geometry>
+        <mesh filename="meshes/UR5e_right_shoulder_link_collisions.obj" scale="1. 1. 1."/>
+      </geometry>
+    </collision>
+  </link>
+  <link name="UR5e_right_tool0">
+    <inertial>
+      <origin xyz="0. 0. 0." rpy="0. 0. 0."/>
+      <mass value="0.0001"/>
+      <inertia ixx="0." ixy="0." ixz="0." iyy="0." iyz="0." izz="0."/>
+    </inertial>
+  </link>
+  <link name="UR5e_right_upper_arm_link">
+    <inertial>
+      <origin xyz="0. 0. 0." rpy="0. 0. 0."/>
+      <mass value="8.3929996"/>
+      <inertia ixx="0." ixy="0." ixz="0." iyy="0." iyz="0." izz="0."/>
+    </inertial>
+    <visual>
+      <origin xyz="0.138 0. 0. " rpy="0. -0. -1.5707964"/>
+      <geometry>
+        <mesh filename="meshes/UR5e_right_upper_arm_link_visuals.obj" scale="1. 1. 1."/>
+      </geometry>
+    </visual>
+    <visual>
+      <origin xyz="0.138 0. 0. " rpy="0. -0. -1.5707964"/>
+      <geometry>
+        <mesh filename="meshes/UR5e_right_upper_arm_link_collisions.obj" scale="1. 1. 1."/>
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0.138 0. 0. " rpy="0. -0. -1.5707964"/>
+      <geometry>
+        <mesh filename="meshes/UR5e_right_upper_arm_link_collisions.obj" scale="1. 1. 1."/>
+      </geometry>
+    </collision>
+  </link>
+  <link name="UR5e_right_wrist_1_link">
+    <inertial>
+      <origin xyz="0. 0. 0." rpy="0. 0. 0."/>
+      <mass value="1.219"/>
+      <inertia ixx="0." ixy="0." ixz="0." iyy="0." iyz="0." izz="0."/>
+    </inertial>
+    <visual>
+      <origin xyz="-0.127 0. 0. " rpy="1.5707964 1.5707964 0. "/>
+      <geometry>
+        <mesh filename="meshes/UR5e_right_wrist_1_link_visuals.obj" scale="1. 1. 1."/>
+      </geometry>
+    </visual>
+    <visual>
+      <origin xyz="-0.127 0. 0. " rpy="1.5707964 1.5707964 0. "/>
+      <geometry>
+        <mesh filename="meshes/UR5e_right_wrist_1_link_collisions.obj" scale="1. 1. 1."/>
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="-0.127 0. 0. " rpy="1.5707964 1.5707964 0. "/>
+      <geometry>
+        <mesh filename="meshes/UR5e_right_wrist_1_link_collisions.obj" scale="1. 1. 1."/>
+      </geometry>
+    </collision>
+  </link>
+  <link name="UR5e_right_wrist_2_link">
+    <inertial>
+      <origin xyz="0. 0. 0." rpy="0. 0. 0."/>
+      <mass value="1.219"/>
+      <inertia ixx="0." ixy="0." ixz="0." iyy="0." iyz="0." izz="0."/>
+    </inertial>
+    <visual>
+      <origin xyz="-0.0997 0. 0. " rpy="0. 1.5707963 0. "/>
+      <geometry>
+        <mesh filename="meshes/UR5e_right_wrist_2_link_visuals.obj" scale="1. 1. 1."/>
+      </geometry>
+    </visual>
+    <visual>
+      <origin xyz="-0.0997 0. 0. " rpy="0. 1.5707963 0. "/>
+      <geometry>
+        <mesh filename="meshes/UR5e_right_wrist_2_link_collisions.obj" scale="1. 1. 1."/>
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="-0.0997 0. 0. " rpy="0. 1.5707963 0. "/>
+      <geometry>
+        <mesh filename="meshes/UR5e_right_wrist_2_link_collisions.obj" scale="1. 1. 1."/>
+      </geometry>
+    </collision>
+  </link>
+  <link name="UR5e_right_wrist_3_link">
+    <inertial>
+      <origin xyz="0. 0. 0." rpy="0. 0. 0."/>
+      <mass value="0.1879"/>
+      <inertia ixx="0." ixy="0." ixz="0." iyy="0." iyz="0." izz="0."/>
+    </inertial>
+    <visual>
+      <origin xyz="-0.0989 0. 0. " rpy="1.5707964 1.5707964 0. "/>
+      <geometry>
+        <mesh filename="meshes/UR5e_right_wrist_3_link_visuals.obj" scale="1. 1. 1."/>
+      </geometry>
+    </visual>
+    <visual>
+      <origin xyz="-0.0989 0. 0. " rpy="1.5707964 1.5707964 0. "/>
+      <geometry>
+        <mesh filename="meshes/UR5e_right_wrist_3_link_collisions.obj" scale="1. 1. 1."/>
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="-0.0989 0. 0. " rpy="1.5707964 1.5707964 0. "/>
+      <geometry>
+        <mesh filename="meshes/UR5e_right_wrist_3_link_collisions.obj" scale="1. 1. 1."/>
+      </geometry>
+    </collision>
+  </link>
+  <link name="World"/>
+  <link name="lh_ffdistal">
+    <visual>
+      <origin xyz="0. 0. 0." rpy="0. 0. 0."/>
+      <geometry>
+        <mesh filename="meshes/lh_ffdistal_collisions__geom_26.obj" scale="1. 1. 1."/>
+      </geometry>
+    </visual>
+    <visual>
+      <origin xyz="0. 0. 0." rpy="0. 0. 0."/>
+      <geometry>
+        <mesh filename="meshes/lh_ffdistal_visuals__geom_25.obj" scale="1. 1. 1."/>
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0. 0. 0." rpy="0. 0. 0."/>
+      <geometry>
+        <mesh filename="meshes/lh_ffdistal_collisions__geom_26.obj" scale="1. 1. 1."/>
+      </geometry>
+    </collision>
+  </link>
+  <link name="lh_ffknuckle">
+    <visual>
+      <origin xyz="0. 0. 0.0005" rpy="0. 0. -1.5707964"/>
+      <geometry>
+        <mesh filename="meshes/lh_ffknuckle_collisions__geom_20.obj" scale="1. 1. 1."/>
+      </geometry>
+    </visual>
+    <visual>
+      <origin xyz="0. 0. 0.0005" rpy="0. 0. -1.5707964"/>
+      <geometry>
+        <mesh filename="meshes/lh_ffknuckle_visuals__geom_19.obj" scale="1. 1. 1."/>
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0. 0. 0.0005" rpy="0. 0. -1.5707964"/>
+      <geometry>
+        <mesh filename="meshes/lh_ffknuckle_collisions__geom_20.obj" scale="1. 1. 1."/>
+      </geometry>
+    </collision>
+  </link>
+  <link name="lh_ffmiddle">
+    <visual>
+      <origin xyz="0. 0. 0." rpy="0. 0. 0."/>
+      <geometry>
+        <mesh filename="meshes/lh_ffmiddle_collisions__geom_24.obj" scale="1. 1. 1."/>
+      </geometry>
+    </visual>
+    <visual>
+      <origin xyz="0. 0. 0." rpy="0. 0. 0."/>
+      <geometry>
+        <mesh filename="meshes/lh_ffmiddle_visuals__geom_23.obj" scale="1. 1. 1."/>
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0. 0. 0." rpy="0. 0. 0."/>
+      <geometry>
+        <mesh filename="meshes/lh_ffmiddle_collisions__geom_24.obj" scale="1. 1. 1."/>
+      </geometry>
+    </collision>
+  </link>
+  <link name="lh_ffproximal">
+    <visual>
+      <origin xyz="0. 0. 0." rpy="0. 0. 0."/>
+      <geometry>
+        <mesh filename="meshes/lh_ffproximal_collisions__geom_22.obj" scale="1. 1. 1."/>
+      </geometry>
+    </visual>
+    <visual>
+      <origin xyz="0. 0. 0." rpy="0. 0. 0."/>
+      <geometry>
+        <mesh filename="meshes/lh_ffproximal_visuals__geom_21.obj" scale="1. 1. 1."/>
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0. 0. 0." rpy="0. 0. 0."/>
+      <geometry>
+        <mesh filename="meshes/lh_ffproximal_collisions__geom_22.obj" scale="1. 1. 1."/>
+      </geometry>
+    </collision>
+  </link>
+  <link name="lh_lfdistal">
+    <visual>
+      <origin xyz="0. 0. 0." rpy="0. 0. 0."/>
+      <geometry>
+        <mesh filename="meshes/lh_lfdistal_collisions__geom_52.obj" scale="1. 1. 1."/>
+      </geometry>
+    </visual>
+    <visual>
+      <origin xyz="0. 0. 0." rpy="0. 0. 0."/>
+      <geometry>
+        <mesh filename="meshes/lh_lfdistal_visuals__geom_51.obj" scale="1. 1. 1."/>
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0. 0. 0." rpy="0. 0. 0."/>
+      <geometry>
+        <mesh filename="meshes/lh_lfdistal_collisions__geom_52.obj" scale="1. 1. 1."/>
+      </geometry>
+    </collision>
+  </link>
+  <link name="lh_lfknuckle">
+    <visual>
+      <origin xyz="0. 0. 0.0005" rpy="0. 0. 1.5707964"/>
+      <geometry>
+        <mesh filename="meshes/lh_lfknuckle_collisions__geom_46.obj" scale="1. 1. 1."/>
+      </geometry>
+    </visual>
+    <visual>
+      <origin xyz="0. 0. 0.0005" rpy="0. 0. 1.5707964"/>
+      <geometry>
+        <mesh filename="meshes/lh_lfknuckle_visuals__geom_45.obj" scale="1. 1. 1."/>
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0. 0. 0.0005" rpy="0. 0. 1.5707964"/>
+      <geometry>
+        <mesh filename="meshes/lh_lfknuckle_collisions__geom_46.obj" scale="1. 1. 1."/>
+      </geometry>
+    </collision>
+  </link>
+  <link name="lh_lfmetacarpal">
+    <visual>
+      <origin xyz="0. 0. 0." rpy="0. -0.9599314 0. "/>
+      <geometry>
+        <mesh filename="meshes/lh_lfmetacarpal_collisions__geom_44.obj" scale="1. 1. 1."/>
+      </geometry>
+    </visual>
+    <visual>
+      <origin xyz="0. 0. 0." rpy="0. -0.9599314 0. "/>
+      <geometry>
+        <mesh filename="meshes/lh_lfmetacarpal_visuals__geom_43.obj" scale="1. 1. 1."/>
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0. 0. 0." rpy="0. -0.9599314 0. "/>
+      <geometry>
+        <mesh filename="meshes/lh_lfmetacarpal_collisions__geom_44.obj" scale="1. 1. 1."/>
+      </geometry>
+    </collision>
+  </link>
+  <link name="lh_lfmiddle">
+    <visual>
+      <origin xyz="0. 0. 0." rpy="0. 0. 0."/>
+      <geometry>
+        <mesh filename="meshes/lh_lfmiddle_collisions__geom_50.obj" scale="1. 1. 1."/>
+      </geometry>
+    </visual>
+    <visual>
+      <origin xyz="0. 0. 0." rpy="0. 0. 0."/>
+      <geometry>
+        <mesh filename="meshes/lh_lfmiddle_visuals__geom_49.obj" scale="1. 1. 1."/>
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0. 0. 0." rpy="0. 0. 0."/>
+      <geometry>
+        <mesh filename="meshes/lh_lfmiddle_collisions__geom_50.obj" scale="1. 1. 1."/>
+      </geometry>
+    </collision>
+  </link>
+  <link name="lh_lfproximal">
+    <visual>
+      <origin xyz="0. 0. 0." rpy="0. 0. 0."/>
+      <geometry>
+        <mesh filename="meshes/lh_lfproximal_collisions__geom_48.obj" scale="1. 1. 1."/>
+      </geometry>
+    </visual>
+    <visual>
+      <origin xyz="0. 0. 0." rpy="0. 0. 0."/>
+      <geometry>
+        <mesh filename="meshes/lh_lfproximal_visuals__geom_47.obj" scale="1. 1. 1."/>
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0. 0. 0." rpy="0. 0. 0."/>
+      <geometry>
+        <mesh filename="meshes/lh_lfproximal_collisions__geom_48.obj" scale="1. 1. 1."/>
+      </geometry>
+    </collision>
+  </link>
+  <link name="lh_mfdistal">
+    <visual>
+      <origin xyz="0. 0. 0." rpy="0. 0. 0."/>
+      <geometry>
+        <mesh filename="meshes/lh_mfdistal_collisions__geom_34.obj" scale="1. 1. 1."/>
+      </geometry>
+    </visual>
+    <visual>
+      <origin xyz="0. 0. 0." rpy="0. 0. 0."/>
+      <geometry>
+        <mesh filename="meshes/lh_mfdistal_visuals__geom_33.obj" scale="1. 1. 1."/>
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0. 0. 0." rpy="0. 0. 0."/>
+      <geometry>
+        <mesh filename="meshes/lh_mfdistal_collisions__geom_34.obj" scale="1. 1. 1."/>
+      </geometry>
+    </collision>
+  </link>
+  <link name="lh_mfknuckle">
+    <visual>
+      <origin xyz="0. 0. 0.0005" rpy="0. 0. -1.5707964"/>
+      <geometry>
+        <mesh filename="meshes/lh_mfknuckle_collisions__geom_28.obj" scale="1. 1. 1."/>
+      </geometry>
+    </visual>
+    <visual>
+      <origin xyz="0. 0. 0.0005" rpy="0. 0. -1.5707964"/>
+      <geometry>
+        <mesh filename="meshes/lh_mfknuckle_visuals__geom_27.obj" scale="1. 1. 1."/>
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0. 0. 0.0005" rpy="0. 0. -1.5707964"/>
+      <geometry>
+        <mesh filename="meshes/lh_mfknuckle_collisions__geom_28.obj" scale="1. 1. 1."/>
+      </geometry>
+    </collision>
+  </link>
+  <link name="lh_mfmiddle">
+    <visual>
+      <origin xyz="0. 0. 0." rpy="0. 0. 0."/>
+      <geometry>
+        <mesh filename="meshes/lh_mfmiddle_collisions__geom_32.obj" scale="1. 1. 1."/>
+      </geometry>
+    </visual>
+    <visual>
+      <origin xyz="0. 0. 0." rpy="0. 0. 0."/>
+      <geometry>
+        <mesh filename="meshes/lh_mfmiddle_visuals__geom_31.obj" scale="1. 1. 1."/>
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0. 0. 0." rpy="0. 0. 0."/>
+      <geometry>
+        <mesh filename="meshes/lh_mfmiddle_collisions__geom_32.obj" scale="1. 1. 1."/>
+      </geometry>
+    </collision>
+  </link>
+  <link name="lh_mfproximal">
+    <visual>
+      <origin xyz="0. 0. 0." rpy="0. 0. 0."/>
+      <geometry>
+        <mesh filename="meshes/lh_mfproximal_collisions__geom_30.obj" scale="1. 1. 1."/>
+      </geometry>
+    </visual>
+    <visual>
+      <origin xyz="0. 0. 0." rpy="0. 0. 0."/>
+      <geometry>
+        <mesh filename="meshes/lh_mfproximal_visuals__geom_29.obj" scale="1. 1. 1."/>
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0. 0. 0." rpy="0. 0. 0."/>
+      <geometry>
+        <mesh filename="meshes/lh_mfproximal_collisions__geom_30.obj" scale="1. 1. 1."/>
+      </geometry>
+    </collision>
+  </link>
+  <link name="lh_palm">
+    <visual>
+      <origin xyz="0. 0. 0." rpy="0. 0. 0."/>
+      <geometry>
+        <mesh filename="meshes/lh_palm_collisions__geom_11.obj" scale="1. 1. 1."/>
+      </geometry>
+    </visual>
+    <visual>
+      <origin xyz="0. 0. 0." rpy="0. 0. 0."/>
+      <geometry>
+        <mesh filename="meshes/lh_palm_visuals__geom_10.obj" scale="1. 1. 1." />
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0. 0. 0." rpy="0. 0. 0."/>
+      <geometry>
+        <mesh filename="meshes/lh_palm_collisions__geom_11.obj" scale="1. 1. 1."/>
+      </geometry>
+    </collision>
+  </link>
+  <link name="lh_rfdistal">
+    <visual>
+      <origin xyz="0. 0. 0." rpy="0. 0. 0."/>
+      <geometry>
+        <mesh filename="meshes/lh_rfdistal_collisions__geom_42.obj" scale="1. 1. 1."/>
+      </geometry>
+    </visual>
+    <visual>
+      <origin xyz="0. 0. 0." rpy="0. 0. 0."/>
+      <geometry>
+        <mesh filename="meshes/lh_rfdistal_visuals__geom_41.obj" scale="1. 1. 1."/>
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0. 0. 0." rpy="0. 0. 0."/>
+      <geometry>
+        <mesh filename="meshes/lh_rfdistal_collisions__geom_42.obj" scale="1. 1. 1."/>
+      </geometry>
+    </collision>
+  </link>
+  <link name="lh_rfknuckle">
+    <visual>
+      <origin xyz="0. 0. 0.0005" rpy="0. 0. 1.5707964"/>
+      <geometry>
+        <mesh filename="meshes/lh_rfknuckle_collisions__geom_36.obj" scale="1. 1. 1."/>
+      </geometry>
+    </visual>
+    <visual>
+      <origin xyz="0. 0. 0.0005" rpy="0. 0. 1.5707964"/>
+      <geometry>
+        <mesh filename="meshes/lh_rfknuckle_visuals__geom_35.obj" scale="1. 1. 1."/>
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0. 0. 0.0005" rpy="0. 0. 1.5707964"/>
+      <geometry>
+        <mesh filename="meshes/lh_rfknuckle_collisions__geom_36.obj" scale="1. 1. 1."/>
+      </geometry>
+    </collision>
+  </link>
+  <link name="lh_rfmiddle">
+    <visual>
+      <origin xyz="0. 0. 0." rpy="0. 0. 0."/>
+      <geometry>
+        <mesh filename="meshes/lh_rfmiddle_collisions__geom_40.obj" scale="1. 1. 1."/>
+      </geometry>
+    </visual>
+    <visual>
+      <origin xyz="0. 0. 0." rpy="0. 0. 0."/>
+      <geometry>
+        <mesh filename="meshes/lh_rfmiddle_visuals__geom_39.obj" scale="1. 1. 1."/>
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0. 0. 0." rpy="0. 0. 0."/>
+      <geometry>
+        <mesh filename="meshes/lh_rfmiddle_collisions__geom_40.obj" scale="1. 1. 1."/>
+      </geometry>
+    </collision>
+  </link>
+  <link name="lh_rfproximal">
+    <visual>
+      <origin xyz="0. 0. 0." rpy="0. 0. 0."/>
+      <geometry>
+        <mesh filename="meshes/lh_rfproximal_collisions__geom_38.obj" scale="1. 1. 1."/>
+      </geometry>
+    </visual>
+    <visual>
+      <origin xyz="0. 0. 0." rpy="0. 0. 0."/>
+      <geometry>
+        <mesh filename="meshes/lh_rfproximal_visuals__geom_37.obj" scale="1. 1. 1."/>
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0. 0. 0." rpy="0. 0. 0."/>
+      <geometry>
+        <mesh filename="meshes/lh_rfproximal_collisions__geom_38.obj" scale="1. 1. 1."/>
+      </geometry>
+    </collision>
+  </link>
+  <link name="lh_thbase">
+    <visual>
+      <origin xyz="0. 0. 0." rpy="0. 1.5707963 0. "/>
+      <geometry>
+        <sphere radius="0.013"/>
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0. 0. 0." rpy="0. 1.5707963 0. "/>
+      <geometry>
+        <sphere radius="0.013"/>
+      </geometry>
+    </collision>
+  </link>
+  <link name="lh_thdistal">
+    <visual>
+      <origin xyz="0. 0. 0." rpy="0. 0. 0."/>
+      <geometry>
+        <mesh filename="meshes/lh_thdistal_collisions__geom_61.obj" scale="1. 1. 1."/>
+      </geometry>
+    </visual>
+    <visual>
+      <origin xyz="0. 0. 0." rpy="0. 0. 0."/>
+      <geometry>
+        <mesh filename="meshes/lh_thdistal_visuals__geom_60.obj" scale="1. 1. 1."/>
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0. 0. 0." rpy="0. 0. 0."/>
+      <geometry>
+        <mesh filename="meshes/lh_thdistal_collisions__geom_61.obj" scale="1. 1. 1."/>
+      </geometry>
+    </collision>
+  </link>
+  <link name="lh_thhub">
+    <visual>
+      <origin xyz="0. 0. 0." rpy="0. 0. -3.1415925"/>
+      <geometry>
+        <sphere radius="0.011"/>
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0. 0. 0." rpy="0. 0. -3.1415925"/>
+      <geometry>
+        <sphere radius="0.011"/>
+      </geometry>
+    </collision>
+  </link>
+  <link name="lh_thmiddle">
+    <visual>
+      <origin xyz="0. 0. 0." rpy="0. -0.0000001 1.5707964"/>
+      <geometry>
+        <mesh filename="meshes/lh_thmiddle_collisions__geom_58.obj" scale="1. 1. 1."/>
+      </geometry>
+    </visual>
+    <visual>
+      <origin xyz="0. 0. 0." rpy="0. -0.0000001 1.5707964"/>
+      <geometry>
+        <mesh filename="meshes/lh_thmiddle_visuals__geom_57.obj" scale="1. 1. 1."/>
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0. 0. 0." rpy="0. -0.0000001 1.5707964"/>
+      <geometry>
+        <mesh filename="meshes/lh_thmiddle_collisions__geom_58.obj" scale="1. 1. 1."/>
+      </geometry>
+    </collision>
+  </link>
+  <link name="lh_thproximal">
+    <visual>
+      <origin xyz="0. 0. 0." rpy="0. 0. -3.1415925"/>
+      <geometry>
+        <mesh filename="meshes/lh_thproximal_collisions__geom_55.obj" scale="1. 1. 1."/>
+      </geometry>
+    </visual>
+    <visual>
+      <origin xyz="0. 0. 0." rpy="0. 0. -3.1415925"/>
+      <geometry>
+        <mesh filename="meshes/lh_thproximal_visuals__geom_54.obj" scale="1. 1. 1."/>
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0. 0. 0." rpy="0. 0. -3.1415925"/>
+      <geometry>
+        <mesh filename="meshes/lh_thproximal_collisions__geom_55.obj" scale="1. 1. 1."/>
+      </geometry>
+    </collision>
+  </link>
+  <link name="lh_wrist">
+    <visual>
+      <origin xyz="0. 0. 0." rpy="0. 0. 0."/>
+      <geometry>
+        <mesh filename="meshes/rh_wrist_collisions__geom_05.obj" scale="1. 1. 1."/>
+      </geometry>
+    </visual>
+    <visual>
+      <origin xyz="0. 0. 0." rpy="0. 0. 0."/>
+      <geometry>
+        <mesh filename="meshes/rh_wrist_visuals__geom_4.obj" scale="1. 1. 1."/>
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0. 0. 0." rpy="0. 0. 0."/>
+      <geometry>
+        <mesh filename="meshes/rh_wrist_collisions__geom_05.obj" scale="1. 1. 1."/>
+      </geometry>
+    </collision>
+  </link>
+  <link name="rh_ffdistal">
+    <visual>
+      <origin xyz="0. 0. 0." rpy="0. 0. 0."/>
+      <geometry>
+        <mesh filename="meshes/rh_ffdistal_collisions__geom_26.obj" scale="1. 1. 1."/>
+      </geometry>
+    </visual>
+    <visual>
+      <origin xyz="0. 0. 0." rpy="0. 0. 0."/>
+      <geometry>
+        <mesh filename="meshes/rh_ffdistal_visuals__geom_25.obj" scale="1. 1. 1."/>
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0. 0. 0." rpy="0. 0. 0."/>
+      <geometry>
+        <mesh filename="meshes/rh_ffdistal_collisions__geom_26.obj" scale="1. 1. 1."/>
+      </geometry>
+    </collision>
+  </link>
+  <link name="rh_ffknuckle">
+    <visual>
+      <origin xyz="0. 0. 0.0005" rpy="0. 0. 1.5707964"/>
+      <geometry>
+        <mesh filename="meshes/rh_ffknuckle_collisions__geom_20.obj" scale="1. 1. 1."/>
+      </geometry>
+    </visual>
+    <visual>
+      <origin xyz="0. 0. 0.0005" rpy="0. 0. 1.5707964"/>
+      <geometry>
+        <mesh filename="meshes/rh_ffknuckle_visuals__geom_19.obj" scale="1. 1. 1."/>
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0. 0. 0.0005" rpy="0. 0. 1.5707964"/>
+      <geometry>
+        <mesh filename="meshes/rh_ffknuckle_collisions__geom_20.obj" scale="1. 1. 1."/>
+      </geometry>
+    </collision>
+  </link>
+  <link name="rh_ffmiddle">
+    <visual>
+      <origin xyz="0. 0. 0." rpy="0. 0. 0."/>
+      <geometry>
+        <mesh filename="meshes/rh_ffmiddle_collisions__geom_24.obj" scale="1. 1. 1."/>
+      </geometry>
+    </visual>
+    <visual>
+      <origin xyz="0. 0. 0." rpy="0. 0. 0."/>
+      <geometry>
+        <mesh filename="meshes/rh_ffmiddle_visuals__geom_23.obj" scale="1. 1. 1."/>
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0. 0. 0." rpy="0. 0. 0."/>
+      <geometry>
+        <mesh filename="meshes/rh_ffmiddle_collisions__geom_24.obj" scale="1. 1. 1."/>
+      </geometry>
+    </collision>
+  </link>
+  <link name="rh_ffproximal">
+    <visual>
+      <origin xyz="0. 0. 0." rpy="0. 0. 0."/>
+      <geometry>
+        <mesh filename="meshes/rh_ffproximal_collisions__geom_22.obj" scale="1. 1. 1."/>
+      </geometry>
+    </visual>
+    <visual>
+      <origin xyz="0. 0. 0." rpy="0. 0. 0."/>
+      <geometry>
+        <mesh filename="meshes/rh_ffproximal_visuals__geom_21.obj" scale="1. 1. 1."/>
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0. 0. 0." rpy="0. 0. 0."/>
+      <geometry>
+        <mesh filename="meshes/rh_ffproximal_collisions__geom_22.obj" scale="1. 1. 1."/>
+      </geometry>
+    </collision>
+  </link>
+  <link name="rh_lfdistal">
+    <visual>
+      <origin xyz="0. 0. 0." rpy="0. 0. 0."/>
+      <geometry>
+        <mesh filename="meshes/rh_lfdistal_collisions__geom_52.obj" scale="1. 1. 1."/>
+      </geometry>
+    </visual>
+    <visual>
+      <origin xyz="0. 0. 0." rpy="0. 0. 0."/>
+      <geometry>
+        <mesh filename="meshes/rh_lfdistal_visuals__geom_51.obj" scale="1. 1. 1."/>
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0. 0. 0." rpy="0. 0. 0."/>
+      <geometry>
+        <mesh filename="meshes/rh_lfdistal_collisions__geom_52.obj" scale="1. 1. 1."/>
+      </geometry>
+    </collision>
+  </link>
+  <link name="rh_lfknuckle">
+    <visual>
+      <origin xyz="0. 0. 0.0005" rpy="0. 0. -1.5707964"/>
+      <geometry>
+        <mesh filename="meshes/rh_lfknuckle_collisions__geom_46.obj" scale="1. 1. 1."/>
+      </geometry>
+    </visual>
+    <visual>
+      <origin xyz="0. 0. 0.0005" rpy="0. 0. -1.5707964"/>
+      <geometry>
+        <mesh filename="meshes/rh_lfknuckle_visuals__geom_45.obj" scale="1. 1. 1."/>
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0. 0. 0.0005" rpy="0. 0. -1.5707964"/>
+      <geometry>
+        <mesh filename="meshes/rh_lfknuckle_collisions__geom_46.obj" scale="1. 1. 1."/>
+      </geometry>
+    </collision>
+  </link>
+  <link name="rh_lfmetacarpal">
+    <visual>
+      <origin xyz="0. 0. 0." rpy="0. 0.9599314 0. "/>
+      <geometry>
+        <mesh filename="meshes/rh_lfmetacarpal_collisions__geom_44.obj" scale="1. 1. 1."/>
+      </geometry>
+    </visual>
+    <visual>
+      <origin xyz="0. 0. 0." rpy="0. 0.9599314 0. "/>
+      <geometry>
+        <mesh filename="meshes/rh_lfmetacarpal_visuals__geom_43.obj" scale="1. 1. 1."/>
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0. 0. 0." rpy="0. 0.9599314 0. "/>
+      <geometry>
+        <mesh filename="meshes/rh_lfmetacarpal_collisions__geom_44.obj" scale="1. 1. 1."/>
+      </geometry>
+    </collision>
+  </link>
+  <link name="rh_lfmiddle">
+    <visual>
+      <origin xyz="0. 0. 0." rpy="0. 0. 0."/>
+      <geometry>
+        <mesh filename="meshes/rh_lfmiddle_collisions__geom_50.obj" scale="1. 1. 1."/>
+      </geometry>
+    </visual>
+    <visual>
+      <origin xyz="0. 0. 0." rpy="0. 0. 0."/>
+      <geometry>
+        <mesh filename="meshes/rh_lfmiddle_visuals__geom_49.obj" scale="1. 1. 1."/>
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0. 0. 0." rpy="0. 0. 0."/>
+      <geometry>
+        <mesh filename="meshes/rh_lfmiddle_collisions__geom_50.obj" scale="1. 1. 1."/>
+      </geometry>
+    </collision>
+  </link>
+  <link name="rh_lfproximal">
+    <visual>
+      <origin xyz="0. 0. 0." rpy="0. 0. 0."/>
+      <geometry>
+        <mesh filename="meshes/rh_lfproximal_collisions__geom_48.obj" scale="1. 1. 1."/>
+      </geometry>
+    </visual>
+    <visual>
+      <origin xyz="0. 0. 0." rpy="0. 0. 0."/>
+      <geometry>
+        <mesh filename="meshes/rh_lfproximal_visuals__geom_47.obj" scale="1. 1. 1."/>
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0. 0. 0." rpy="0. 0. 0."/>
+      <geometry>
+        <mesh filename="meshes/rh_lfproximal_collisions__geom_48.obj" scale="1. 1. 1."/>
+      </geometry>
+    </collision>
+  </link>
+  <link name="rh_mfdistal">
+    <visual>
+      <origin xyz="0. 0. 0." rpy="0. 0. 0."/>
+      <geometry>
+        <mesh filename="meshes/rh_mfdistal_collisions__geom_34.obj" scale="1. 1. 1."/>
+      </geometry>
+    </visual>
+    <visual>
+      <origin xyz="0. 0. 0." rpy="0. 0. 0."/>
+      <geometry>
+        <mesh filename="meshes/rh_mfdistal_visuals__geom_33.obj" scale="1. 1. 1."/>
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0. 0. 0." rpy="0. 0. 0."/>
+      <geometry>
+        <mesh filename="meshes/rh_mfdistal_collisions__geom_34.obj" scale="1. 1. 1."/>
+      </geometry>
+    </collision>
+  </link>
+  <link name="rh_mfknuckle">
+    <visual>
+      <origin xyz="0. 0. 0.0005" rpy="0. 0. 1.5707964"/>
+      <geometry>
+        <mesh filename="meshes/rh_mfknuckle_collisions__geom_28.obj" scale="1. 1. 1."/>
+      </geometry>
+    </visual>
+    <visual>
+      <origin xyz="0. 0. 0.0005" rpy="0. 0. 1.5707964"/>
+      <geometry>
+        <mesh filename="meshes/rh_mfknuckle_visuals__geom_27.obj" scale="1. 1. 1."/>
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0. 0. 0.0005" rpy="0. 0. 1.5707964"/>
+      <geometry>
+        <mesh filename="meshes/rh_mfknuckle_collisions__geom_28.obj" scale="1. 1. 1."/>
+      </geometry>
+    </collision>
+  </link>
+  <link name="rh_mfmiddle">
+    <visual>
+      <origin xyz="0. 0. 0." rpy="0. 0. 0."/>
+      <geometry>
+        <mesh filename="meshes/rh_mfmiddle_collisions__geom_32.obj" scale="1. 1. 1."/>
+      </geometry>
+    </visual>
+    <visual>
+      <origin xyz="0. 0. 0." rpy="0. 0. 0."/>
+      <geometry>
+        <mesh filename="meshes/rh_mfmiddle_visuals__geom_31.obj" scale="1. 1. 1."/>
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0. 0. 0." rpy="0. 0. 0."/>
+      <geometry>
+        <mesh filename="meshes/rh_mfmiddle_collisions__geom_32.obj" scale="1. 1. 1."/>
+      </geometry>
+    </collision>
+  </link>
+  <link name="rh_mfproximal">
+    <visual>
+      <origin xyz="0. 0. 0." rpy="0. 0. 0."/>
+      <geometry>
+        <mesh filename="meshes/rh_mfproximal_collisions__geom_30.obj" scale="1. 1. 1."/>
+      </geometry>
+    </visual>
+    <visual>
+      <origin xyz="0. 0. 0." rpy="0. 0. 0."/>
+      <geometry>
+        <mesh filename="meshes/rh_mfproximal_visuals__geom_29.obj" scale="1. 1. 1."/>
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0. 0. 0." rpy="0. 0. 0."/>
+      <geometry>
+        <mesh filename="meshes/rh_mfproximal_collisions__geom_30.obj" scale="1. 1. 1."/>
+      </geometry>
+    </collision>
+  </link>
+  <link name="rh_palm">
+    <visual>
+      <origin xyz="0. 0. 0." rpy="0. 0. 0."/>
+      <geometry>
+        <mesh filename="meshes/rh_palm_collisions__geom_11.obj" scale="1. 1. 1."/>
+      </geometry>
+    </visual>
+    <visual>
+      <origin xyz="0. 0. 0." rpy="0. 0. 0."/>
+      <geometry>
+        <mesh filename="meshes/rh_palm_visuals__geom_10.obj" scale="1. 1. 1."/>
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0. 0. 0." rpy="0. 0. 0."/>
+      <geometry>
+        <mesh filename="meshes/rh_palm_collisions__geom_11.obj" scale="1. 1. 1."/>
+      </geometry>
+    </collision>
+  </link>
+  <link name="rh_rfdistal">
+    <visual>
+      <origin xyz="0. 0. 0." rpy="0. 0. 0."/>
+      <geometry>
+        <mesh filename="meshes/rh_rfdistal_collisions__geom_42.obj" scale="1. 1. 1."/>
+      </geometry>
+    </visual>
+    <visual>
+      <origin xyz="0. 0. 0." rpy="0. 0. 0."/>
+      <geometry>
+        <mesh filename="meshes/rh_rfdistal_visuals__geom_41.obj" scale="1. 1. 1."/>
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0. 0. 0." rpy="0. 0. 0."/>
+      <geometry>
+        <mesh filename="meshes/rh_rfdistal_collisions__geom_42.obj" scale="1. 1. 1."/>
+      </geometry>
+    </collision>
+  </link>
+  <link name="rh_rfknuckle">
+    <visual>
+      <origin xyz="0. 0. 0.0005" rpy="0. 0. -1.5707964"/>
+      <geometry>
+        <mesh filename="meshes/rh_rfknuckle_collisions__geom_36.obj" scale="1. 1. 1."/>
+      </geometry>
+    </visual>
+    <visual>
+      <origin xyz="0. 0. 0.0005" rpy="0. 0. -1.5707964"/>
+      <geometry>
+        <mesh filename="meshes/rh_rfknuckle_visuals__geom_35.obj" scale="1. 1. 1."/>
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0. 0. 0.0005" rpy="0. 0. -1.5707964"/>
+      <geometry>
+        <mesh filename="meshes/rh_rfknuckle_collisions__geom_36.obj" scale="1. 1. 1."/>
+      </geometry>
+    </collision>
+  </link>
+  <link name="rh_rfmiddle">
+    <visual>
+      <origin xyz="0. 0. 0." rpy="0. 0. 0."/>
+      <geometry>
+        <mesh filename="meshes/rh_rfmiddle_collisions__geom_40.obj" scale="1. 1. 1."/>
+      </geometry>
+    </visual>
+    <visual>
+      <origin xyz="0. 0. 0." rpy="0. 0. 0."/>
+      <geometry>
+        <mesh filename="meshes/rh_rfmiddle_visuals__geom_39.obj" scale="1. 1. 1."/>
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0. 0. 0." rpy="0. 0. 0."/>
+      <geometry>
+        <mesh filename="meshes/rh_rfmiddle_collisions__geom_40.obj" scale="1. 1. 1."/>
+      </geometry>
+    </collision>
+  </link>
+  <link name="rh_rfproximal">
+    <visual>
+      <origin xyz="0. 0. 0." rpy="0. 0. 0."/>
+      <geometry>
+        <mesh filename="meshes/rh_rfproximal_collisions__geom_38.obj" scale="1. 1. 1."/>
+      </geometry>
+    </visual>
+    <visual>
+      <origin xyz="0. 0. 0." rpy="0. 0. 0."/>
+      <geometry>
+        <mesh filename="meshes/rh_rfproximal_visuals__geom_37.obj" scale="1. 1. 1."/>
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0. 0. 0." rpy="0. 0. 0."/>
+      <geometry>
+        <mesh filename="meshes/rh_rfproximal_collisions__geom_38.obj" scale="1. 1. 1."/>
+      </geometry>
+    </collision>
+  </link>
+  <link name="rh_thbase">
+    <visual>
+      <origin xyz="0. 0. 0." rpy="3.1415927 -1.5707961 -3.1415927"/>
+      <geometry>
+        <sphere radius="0.013"/>
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0. 0. 0." rpy="3.1415927 -1.5707961 -3.1415927"/>
+      <geometry>
+        <sphere radius="0.013"/>
+      </geometry>
+    </collision>
+  </link>
+  <link name="rh_thdistal">
+    <visual>
+      <origin xyz="0. 0. 0." rpy="0. 0. 0."/>
+      <geometry>
+        <mesh filename="meshes/rh_thdistal_collisions__geom_61.obj" scale="1. 1. 1."/>
+      </geometry>
+    </visual>
+    <visual>
+      <origin xyz="0. 0. 0." rpy="0. 0. 0."/>
+      <geometry>
+        <mesh filename="meshes/rh_thdistal_visuals__geom_60.obj" scale="1. 1. 1."/>
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0. 0. 0." rpy="0. 0. 0."/>
+      <geometry>
+        <mesh filename="meshes/rh_thdistal_collisions__geom_61.obj" scale="1. 1. 1."/>
+      </geometry>
+    </collision>
+  </link>
+  <link name="rh_thhub">
+    <visual>
+      <origin xyz="0. 0. 0." rpy="0. 0. 0."/>
+      <geometry>
+        <sphere radius="0.011"/>
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0. 0. 0." rpy="0. 0. 0."/>
+      <geometry>
+        <sphere radius="0.011"/>
+      </geometry>
+    </collision>
+  </link>
+  <link name="rh_thmiddle">
+    <visual>
+      <origin xyz="0. 0. 0." rpy="0. -0.0000001 1.5707964"/>
+      <geometry>
+        <mesh filename="meshes/rh_thmiddle_collisions__geom_58.obj" scale="1. 1. 1."/>
+      </geometry>
+    </visual>
+    <visual>
+      <origin xyz="0. 0. 0." rpy="0. -0.0000001 1.5707964"/>
+      <geometry>
+        <mesh filename="meshes/rh_thmiddle_visuals__geom_57.obj" scale="1. 1. 1."/>
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0. 0. 0." rpy="0. -0.0000001 1.5707964"/>
+      <geometry>
+        <mesh filename="meshes/rh_thmiddle_collisions__geom_58.obj" scale="1. 1. 1."/>
+      </geometry>
+    </collision>
+  </link>
+  <link name="rh_thproximal">
+    <visual>
+      <origin xyz="0. 0. 0." rpy="0. 0. 0."/>
+      <geometry>
+        <mesh filename="meshes/rh_thproximal_collisions__geom_55.obj" scale="1. 1. 1."/>
+      </geometry>
+    </visual>
+    <visual>
+      <origin xyz="0. 0. 0." rpy="0. 0. 0."/>
+      <geometry>
+        <mesh filename="meshes/rh_thproximal_visuals__geom_54.obj" scale="1. 1. 1."/>
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0. 0. 0." rpy="0. 0. 0."/>
+      <geometry>
+        <mesh filename="meshes/rh_thproximal_collisions__geom_55.obj" scale="1. 1. 1."/>
+      </geometry>
+    </collision>
+  </link>
+  <link name="rh_wrist">
+    <visual>
+      <origin xyz="0. 0. 0." rpy="0. 0. 0."/>
+      <geometry>
+        <mesh filename="meshes/rh_wrist_collisions__geom_05.obj" scale="1. 1. 1."/>
+      </geometry>
+    </visual>
+    <visual>
+      <origin xyz="0. 0. 0." rpy="0. 0. 0."/>
+      <geometry>
+        <mesh filename="meshes/rh_wrist_visuals__geom_4.obj" scale="1. 1. 1."/>
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0. 0. 0." rpy="0. 0. 0."/>
+      <geometry>
+        <mesh filename="meshes/rh_wrist_collisions__geom_05.obj" scale="1. 1. 1."/>
+      </geometry>
+    </collision>
+  </link>
+</robot>
